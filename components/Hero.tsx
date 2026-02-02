@@ -2,6 +2,30 @@
 import React from 'react';
 
 const Hero: React.FC = () => {
+  const scrollToFlavors = () => {
+    const element = document.getElementById('flavors');
+    if (element) {
+      const offset = 80;
+      const bodyRect = document.body.getBoundingClientRect().top;
+      const elementRect = element.getBoundingClientRect().top;
+      const elementPosition = elementRect - bodyRect;
+      const offsetPosition = elementPosition - offset;
+      window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+    }
+  };
+
+  const scrollToStory = () => {
+    const element = document.getElementById('story');
+    if (element) {
+      const offset = 80;
+      const bodyRect = document.body.getBoundingClientRect().top;
+      const elementRect = element.getBoundingClientRect().top;
+      const elementPosition = elementRect - bodyRect;
+      const offsetPosition = elementPosition - offset;
+      window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+    }
+  };
+
   return (
     <section className="relative pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
@@ -20,10 +44,16 @@ const Hero: React.FC = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center pt-8">
-            <button className="px-10 py-5 bg-[#8B0000] text-white font-black text-xl uppercase tracking-tighter border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all">
+            <button 
+              onClick={scrollToFlavors}
+              className="px-10 py-5 bg-[#8B0000] text-white font-black text-xl uppercase tracking-tighter border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all"
+            >
               Find Our Soju
             </button>
-            <button className="px-10 py-5 bg-white text-[#1B2A41] font-black text-xl uppercase tracking-tighter border-4 border-[#1B2A41] shadow-[8px_8px_0px_0px_rgba(27,42,65,1)] hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all">
+            <button 
+              onClick={scrollToStory}
+              className="px-10 py-5 bg-white text-[#1B2A41] font-black text-xl uppercase tracking-tighter border-4 border-[#1B2A41] shadow-[8px_8px_0px_0px_rgba(27,42,65,1)] hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all"
+            >
               The Vibe
             </button>
           </div>

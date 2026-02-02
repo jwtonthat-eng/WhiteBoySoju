@@ -3,7 +3,7 @@ import React from 'react';
 
 const About: React.FC = () => {
   return (
-    <section id="story" className="py-24 bg-[#1B2A41] text-[#FDFBF7] relative overflow-hidden">
+    <section id="story" className="py-24 bg-[#1B2A41] text-[#FDFBF7] relative overflow-hidden scroll-mt-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-16 items-center">
         <div className="relative">
           <div className="aspect-[4/5] border-8 border-[#8B0000] overflow-hidden rotate-2 shadow-2xl">

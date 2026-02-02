@@ -6,6 +6,7 @@ import Hero from './components/Hero';
 import About from './components/About';
 import Flavors from './components/Flavors';
 import Culture from './components/Culture';
+import Founders from './components/Founders';
 import Footer from './components/Footer';
 
 const App: React.FC = () => {
@@ -42,9 +43,10 @@ const App: React.FC = () => {
         </section>
 
         <Culture />
+        <Founders />
 
         {/* Newsletter / CTA Section */}
-        <section id="find" className="py-32 bg-[#FDFBF7] text-center">
+        <section id="find" className="py-32 bg-[#FDFBF7] text-center scroll-mt-20">
           <div className="max-w-xl mx-auto px-6 space-y-12">
             <div className="w-24 h-24 bg-[#8B0000] rounded-full mx-auto flex items-center justify-center text-white border-4 border-black rotate-12">
               <span className="font-display text-3xl">WBS</span>
@@ -76,6 +78,33 @@ const App: React.FC = () => {
         }
         .animate-marquee {
           animation: marquee 30s linear infinite;
+        }
+        
+        /* Modern UI animation helpers */
+        .animate-in {
+          animation-duration: 0.5s;
+          animation-fill-mode: both;
+        }
+        .fade-in { animation-name: fadeIn; }
+        .slide-in-from-left-2 { animation-name: slideInFromLeft; }
+        .slide-in-from-right-8 { animation-name: slideInFromRight; }
+        .zoom-in-95 { animation-name: zoomIn; }
+
+        @keyframes fadeIn {
+          from { opacity: 0; }
+          to { opacity: 1; }
+        }
+        @keyframes slideInFromLeft {
+          from { transform: translateX(-0.5rem); opacity: 0; }
+          to { transform: translateX(0); opacity: 1; }
+        }
+        @keyframes slideInFromRight {
+          from { transform: translateX(2rem); opacity: 0; }
+          to { transform: translateX(0); opacity: 1; }
+        }
+        @keyframes zoomIn {
+          from { transform: scale(0.95); opacity: 0; }
+          to { transform: scale(1); opacity: 1; }
         }
       `}</style>
     </div>
